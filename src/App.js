@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useCallback } from 'react';
+import {Route} from 'react-router-dom';
+import NewsPage from "./components/NewsPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// API KEY = 14d1d58062844f19a60e8f83399a1a01
+
+/**
+ * API
+ * get all news
+ * GET https://newsapi.org/v2/top-headlines?country=kr&apiKey=14d1d58062844f19a60e8f83399a1a01
+ *
+ * get certain category news
+ * GET https://newsapi.org/v2/top-headlines?country=kr&category=business&apiKey=14d1d58062844f19a60e8f83399a1a01
+ *
+ */
+
+const App = () => {
+  return <Route path="/:category?" component={NewsPage} />;
+};
 
 export default App;
